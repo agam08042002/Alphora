@@ -1,20 +1,9 @@
-services:
-  # Backend service
-  - type: web
-    name: alphora-backend
-    env: node
-    plan: starter   # backend must use "starter" plan
-    branch: main
-    rootDir: Catalog/backend
-    buildCommand: npm install
-    startCommand: node server.js
-
-  # Frontend service
-  - type: web
-    name: alphora-frontend
-    env: static
-    plan: free      # static site can be free
-    branch: main
-    rootDir: Catalog/frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
+# Backend service
+- type: web
+  name: alphora-backend
+  env: node
+  plan: free    # change from "starter" to "free"
+  branch: main
+  rootDir: Catalog/backend
+  buildCommand: npm install
+  startCommand: node server.js
