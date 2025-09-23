@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: alphora-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    branch: master
+    rootDir: backend
+
+  - type: web
+    name: alphora-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    branch: master
+    rootDir: frontend
